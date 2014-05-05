@@ -1,0 +1,193 @@
+* installing *source* package ‘CDS’ ...
+** libs
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c badday.c -o badday.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c bsearch.c -o bsearch.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c busDaysOffset.c -o busDaysOffset.o
+busDaysOffset.c:37:10: warning: incompatible integer to pointer conversion assigning to 'SEXP' (aka 'struct SEXPREC *') from 'int' [-Wint-conversion]
+  offset = *INTEGER(offset);
+         ^ ~~~~~~~~~~~~~~~~
+1 warning generated.
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c buscache.c -o buscache.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c busday.c -o busday.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c calcSpread_new.c -o calcSpread_new.o
+calcSpread_new.c:280:38: warning: passing 'const char *' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+      if (JpmcdsStringToDateInterval(CHAR(asChar(VECTOR_ELT(expiries, i))), routine_zc_main, &tmp) != SUCCESS)  {
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Frameworks/R.framework/Resources/include/Rinternals.h:395:18: note: expanded from macro 'CHAR'
+#define CHAR(x)         R_CHAR(x)
+                        ^~~~~~~~~
+./convert.h:63:21: note: passing argument to parameter 'input' here
+    (char          *input,      /* (I) String w/ 1A, 3M, 4D, etc */
+                    ^
+1 warning generated.
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c calcUpfront_new.c -o calcUpfront_new.o
+calcUpfront_new.c:160:16: warning: incompatible integer to pointer conversion assigning to 'SEXP' (aka 'struct SEXPREC *') from 'int' [-Wint-conversion]
+  isPriceClean = *INTEGER(isPriceClean);
+               ^ ~~~~~~~~~~~~~~~~~~~~~~
+calcUpfront_new.c:161:23: warning: incompatible integer to pointer conversion assigning to 'SEXP' (aka 'struct SEXPREC *') from 'int' [-Wint-conversion]
+  payAccruedOnDefault = *INTEGER(payAccruedOnDefault);
+                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+calcUpfront_new.c:168:20: warning: assigning to 'char *' from 'const char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  pt_badDayConvCDS = CHAR(asChar(STRING_ELT(badDayConvCDS, 0)));
+                   ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+calcUpfront_new.c:217:34: warning: passing 'const char *' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+         if (JpmcdsStringToDateInterval(CHAR(asChar(VECTOR_ELT(expiries, i))), routine_zc_main, &tmp) != SUCCESS)
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Library/Frameworks/R.framework/Resources/include/Rinternals.h:395:18: note: expanded from macro 'CHAR'
+#define CHAR(x)         R_CHAR(x)
+                        ^~~~~~~~~
+./convert.h:63:21: note: passing argument to parameter 'input' here
+    (char          *input,      /* (I) String w/ 1A, 3M, 4D, etc */
+                    ^
+calcUpfront_new.c:281:7: warning: incompatible pointer to integer conversion passing 'SEXP' (aka 'struct SEXPREC *') to parameter of type 'TBoolean' (aka 'int') [-Wint-conversion]
+                                  payAccruedOnDefault, //TRUE,
+                                  ^~~~~~~~~~~~~~~~~~~
+./cdsone.h:36:18: note: passing argument to parameter 'payAccruedOnDefault' here
+ TBoolean        payAccruedOnDefault,
+                 ^
+calcUpfront_new.c:290:7: warning: incompatible pointer to integer conversion passing 'SEXP' (aka 'struct SEXPREC *') to parameter of type 'TBoolean' (aka 'int') [-Wint-conversion]
+                                  isPriceClean,
+                                  ^~~~~~~~~~~~
+./cdsone.h:45:18: note: passing argument to parameter 'payAccruedAtStart' here
+ TBoolean        payAccruedAtStart,
+                 ^
+6 warnings generated.
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c cashflow.c -o cashflow.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c cds.c -o cds.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c cdsbootstrap.c -o cdsbootstrap.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c cdsone.c -o cdsone.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c cerror.c -o cerror.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c cfileio.c -o cfileio.o
+clang++ -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c cfinanci.cpp -o cfinanci.o
+cfinanci.cpp:51:23: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+        JpmcdsErrMsg ("%s: Bad discount factor %f.\n",routine,discount) ;
+                      ^
+cfinanci.cpp:64:30: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+                JpmcdsErrMsg("%s: Start date (%s) equals end date (%s), "
+                             ^
+cfinanci.cpp:84:22: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+        JpmcdsErrMsg("%s: Start date %s cannot equal end date.\n",
+                     ^
+cfinanci.cpp:92:23: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+        JpmcdsErrMsg ("%s: Basis (%ld) < %d.\n",
+                      ^
+cfinanci.cpp:119:22: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+        JpmcdsErrMsg("%s: Failed.\n", routine);
+                     ^
+cfinanci.cpp:147:25: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+           JpmcdsErrMsg("%s: Bad rate (discount factor) %f\n",routine,rate);
+                        ^
+cfinanci.cpp:156:23: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+        JpmcdsErrMsg ("%s: Basis (%ld) < %d.\n",routine,rateBasis,
+                      ^
+cfinanci.cpp:183:22: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+        JpmcdsErrMsg("%s: Failed.\n", routine);
+                     ^
+cfinanci.cpp:208:22: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+        JpmcdsErrMsg("%s: Discount %f <= 0.\n", routine, discount);
+                     ^
+cfinanci.cpp:219:26: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+            JpmcdsErrMsg("%s: Bad discount:%f or year fraction:%f\n",
+                         ^
+cfinanci.cpp:230:26: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+            JpmcdsErrMsg("%s: Undefined discount rate\n",routine);
+                         ^
+cfinanci.cpp:240:26: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+            JpmcdsErrMsg("%s: Div by zero - yr frac %f.\n",
+                         ^
+cfinanci.cpp:255:27: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+            JpmcdsErrMsg ("%s: Div by zero - yr frac %f.\n",
+                          ^
+cfinanci.cpp:298:30: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+                JpmcdsErrMsg("%s: Invalid simple interest rate:%f\n",
+                             ^
+cfinanci.cpp:317:30: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+                JpmcdsErrMsg("%s: Invalid discount rate:%f\n",
+                             ^
+cfinanci.cpp:342:30: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+                JpmcdsErrMsg("%s: Bad rate: %f.\n", routine, rate);
+                             ^
+cfinanci.cpp:360:18: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+    JpmcdsErrMsg("%s: Failed.\n", routine);
+                 ^
+cfinanci.cpp:435:26: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+            JpmcdsErrMsg("%s: Simple Rate (%f) * Year Fraction (%f) must "
+                         ^
+cfinanci.cpp:445:26: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+            JpmcdsErrMsg("%s: Discount Rate (%f) * Year Fraction (%f) must "
+                         ^
+cfinanci.cpp:460:26: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+            JpmcdsErrMsg("%s: Discount factor (%f) must be > 0.0.\n",
+                         ^
+cfinanci.cpp:469:26: warning: conversion from string literal to 'char *' is deprecated [-Wdeprecated-writable-strings]
+            JpmcdsErrMsg("%s: Rate (%f) must be greater than -basis (%f).\n",
+                         ^
+21 warnings generated.
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c cmemory.c -o cmemory.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c contingentleg.c -o contingentleg.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c convert.c -o convert.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c cx.c -o cx.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c cxbsearch.c -o cxbsearch.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c cxdatelist.c -o cxdatelist.o
+cxdatelist.c:433:71: warning: '&&' within '||' [-Wlogical-op-parentheses]
+        if (date == endDate || totalDates == 1 || stubType->stubAtEnd && !stubType->longStub)
+                                               ~~ ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+cxdatelist.c:433:71: note: place parentheses around the '&&' expression to silence this warning
+        if (date == endDate || totalDates == 1 || stubType->stubAtEnd && !stubType->longStub)
+                                                                      ^
+                                                  (                                         )
+1 warning generated.
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c cxzerocurve.c -o cxzerocurve.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c date_sup.c -o date_sup.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c dateadj.c -o dateadj.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c dateconv.c -o dateconv.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c datelist.c -o datelist.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c defaulted.c -o defaulted.o
+defaulted.c:73:16: warning: implicit declaration of function 'JpmcdsDayCountFraction' is invalid in C99 [-Wimplicit-function-declaration]
+            if(JpmcdsDayCountFraction(
+               ^
+1 warning generated.
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c dtlist.c -o dtlist.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c feeleg.c -o feeleg.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c fltrate.c -o fltrate.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c gtozc.c -o gtozc.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c interpc.c -o interpc.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c ldate.c -o ldate.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c linterpc.c -o linterpc.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c lintrp1.c -o lintrp1.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c lprintf.c -o lprintf.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c lscanf.c -o lscanf.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c rtbrent.c -o rtbrent.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c schedule.c -o schedule.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c streamcf.c -o streamcf.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c strutil.c -o strutil.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c stub.c -o stub.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c tcurve.c -o tcurve.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c timeline.c -o timeline.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c version.c -o version.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c yearfrac.c -o yearfrac.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c zcall.c -o zcall.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c zcswap.c -o zcswap.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c zcswdate.c -o zcswdate.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c zcswutil.c -o zcswutil.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c zerocurve.c -o zerocurve.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c zr2coup.c -o zr2coup.o
+clang -I/Library/Frameworks/R.framework/Resources/include -DNDEBUG  -I/usr/local/include -I"/Library/Frameworks/R.framework/Versions/3.0/Resources/library/Rcpp/include"   -fPIC  -mtune=core2 -g -O2  -c zr2fwd.c -o zr2fwd.o
+clang++ -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -single_module -multiply_defined suppress -L/usr/local/lib -L/usr/local/lib -o CDS.so badday.o bsearch.o busDaysOffset.o buscache.o busday.o calcSpread_new.o calcUpfront_new.o cashflow.o cds.o cdsbootstrap.o cdsone.o cerror.o cfileio.o cfinanci.o cmemory.o contingentleg.o convert.o cx.o cxbsearch.o cxdatelist.o cxzerocurve.o date_sup.o dateadj.o dateconv.o datelist.o defaulted.o dtlist.o feeleg.o fltrate.o gtozc.o interpc.o ldate.o linterpc.o lintrp1.o lprintf.o lscanf.o rtbrent.o schedule.o streamcf.o strutil.o stub.o tcurve.o timeline.o version.o yearfrac.o zcall.o zcswap.o zcswdate.o zcswutil.o zerocurve.o zr2coup.o zr2fwd.o -F/Library/Frameworks/R.framework/.. -framework R -Wl,-framework -Wl,CoreFoundation
+installing to /Users/kanishkamalik/Desktop/untitled folder/CDS/CDS.Rcheck/CDS/libs
+** R
+** inst
+** preparing package for lazy loading
+Warning in rm(list = what, pos = classWhere) :
+  object '.__C__Date' not found
+Creating a generic function from function ‘CS10’ in package ‘CDS’
+Creating a generic function from function ‘calcIRDV01’ in package ‘CDS’
+Creating a generic function from function ‘calcRecRisk01’ in package ‘CDS’
+Creating a generic function from function ‘calcSpreadDV01’ in package ‘CDS’
+Creating a generic function for ‘update’ from package ‘stats’ in package ‘CDS’
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+* DONE (CDS)

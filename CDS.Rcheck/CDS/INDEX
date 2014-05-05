@@ -1,0 +1,41 @@
+CDS                     Build a CDS class object to include relevant
+                        info about a CDS contract
+CDS-class               Class definition for the CDS package
+CS10                    Calculate the CS10 of a CDS contract
+busDaysOffset           function to pass R objects to compiled C code
+                        loaded into R
+calcIRDV01              Calculate the IR DV01 from conventional spread
+calcRecRisk01           Calculate the amount of change in upfront when
+                        there is a 1 increase in recovery rate.
+calcSpread              Calculate conventional spread from upfront
+calcSpreadDV01          Calculate the spread DV01 from conventional
+                        spread
+calcUpfront             Calculate dirty upfront payments from
+                        conventional spread
+defaultExpo             Calculate the default exposure of a CDS
+                        contract based on the formula: Default
+                        Exposure: (1-Recovery Rate)*Notional -
+                        Principal
+defaultProb             Approximate the default probability at time t
+                        given the parSpread
+getDates                The function gets relevant coupon dates for a
+                        CDS contract.
+getRates                The function returns the deposits and swap
+                        rates for the day input. The day input should
+                        be a weekday. If not, go to the most recent
+                        weekday.
+impliedRecoveryRate     Function that uses the ISDA model to calculate
+                        the implied recovery rate for cases in which we
+                        have a spread and a probability of default
+                        (pd). This could take a dataframe of inputs and
+                        return a vector of the same length. If we have
+                        a data frame like: id,spread,pd which we pass
+                        into a function, this then returns a vector of
+                        implied default rates. Typical size for this
+                        dataframe is 500 rows.
+price                   Calculate the price of a CDS contract
+show                    The show method for CDS class
+summary,CDS-method      The summary method displays only the essential
+                        info about the CDS class object.
+update,CDS-method       update spread or ptsUpfront or upfront based on
+                        a new CDS class object.

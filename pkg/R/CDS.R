@@ -1,20 +1,26 @@
 #' Build a CDS class object to include relevant info about a CDS contract
 #'
-#' @param contract is the contract type, default SNAC
-#' @param TDate 
-#' @param entityName is the name of the reference entity. Optional.
+#' @name CDS
 #' 
+#' @param contract is the contract type, default SNAC
+#' @param TDate is when the trade is executed, denoted as T. Default is today.
+#' @param entityName is the name of the reference entity. Optional.
+#' @param parSpread CDS par spread in bps
+#' @param badDayConvZC is a character indicating how bad days are
 #' @param notional is the notional amount, default is 1e7.
-#' @param tradeDate is when the trade is executed, denoted as T. Default is today.
-#' @param spread CDS par spread in bps
 #' @param couponRate in bps
-#' @param DCC day count convention of the CDS. The default is ACT/360.
-#' @param freq date interval of the CDS contract
-#' @param maturity maturity of the CDS contract
+#' @param badDayConvCDS refers to the bay day conversion for the CDS
+#' coupon payments. Default is "F", following.
+#' @param RED alphanumeric code assigned to the reference entity
+#' @param dccCDS day count convention of the CDS. The default is ACT/360.
+#' @param freqCDS date interval of the CDS contract
+#' @param maturity of the CDS contract
 #' @param payAccruedOnDefault is a partial payment of the premium made to
 #' the protection seller in the event of a default. Default is TRUE.
-#' @param recRate in decimal. Default is 0.4.
-#'
+#' @param recoveryRate in decimal. Default is 0.4.
+#' @param baseDate is the start date for the IR curve. Default is TDate. baseDate <-
+#' "2011-03-04"
+#' @param currency in which CDS is denominated
 #' @param types is a string indicating the names of the instruments
 #' used for the yield curve. 'M' means money market rate; 'S' is swap
 #' rate.
@@ -29,7 +35,11 @@
 #' being paid.
 #' @param fixedSwapDCC is the day count convention of the fixed leg.
 #' @param floatSwapDCC is the day count convention of the floating leg.
-#'
+#' @param holidays is an input for holiday files to adjust to in day
+#' @param stubCDS is a character indicating the presence of a stub
+#' @param calendar refers to any calendar adjustment for the CDS
+#' @param upfront upfront payment
+#' @param ptsUpfront basis points upfront
 #' @param valueDate is the date for which the present value of the CDS
 #' is calculated. aka cash-settle date. The default is T + 3.
 #' @param benchmarkDate Accrual begin date.
@@ -40,6 +50,9 @@
 #' @param endDate aka maturity date. This is when the contract expires
 #' and protection ends. Any default after this date does not trigger a
 #' payment.
+#' @param isPriceClean refers to the type of upfront calculated. It is
+#' boolean. When TRUE, calculate principal only. When FALSE, calculate
+#' principal + accrual.
 #' @param stepinDate default is T + 1.
 #' @export
 #' 

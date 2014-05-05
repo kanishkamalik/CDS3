@@ -1,0 +1,52 @@
+
+R version 3.0.3 (2014-03-06) -- "Warm Puppy"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> ## CDS.R test case for Caesars Entertainment Operating Co Inc
+> 
+> library(CDS)
+Loading required package: grid
+Loading required package: Rcpp
+Loading required package: RCurl
+Loading required package: bitops
+Loading required package: XML
+> 
+> truth1 <- list(TDate = "2014-04-15",
++               maturity = "5Y",
++               parSpread = 12354.529,
++               upfront = 5707438,
++               
++               currency = "USD",
++               couponRate = 500,
++               recoveryRate = 0.40,
++               isPriceClean = FALSE,
++               notional = 1e7)
+> 
+> save(truth1, file = "CDS.CaesarsEntCorp.test.RData")
+> 
+> load("CDS.CaesarsEntCorp.test.RData")
+> result1 <- CDS(TDate = "2014-04-15",
++                maturity = "5Y",
++                parSpread = 12354.529,
++                currency = "USD",
++                couponRate = 500,
++                recoveryRate = 0.40,
++                isPriceClean = FALSE,
++                notional = 1e7)
+> stopifnot(all.equal(truth1, result1))
+Error in current[[i]] : this S4 class is not subsettable
+Calls: stopifnot ... all.equal -> all.equal.character -> attr.all.equal -> mode
+Execution halted

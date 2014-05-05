@@ -1,0 +1,64 @@
+
+R version 3.0.3 (2014-03-06) -- "Warm Puppy"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "CDS"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('CDS')
+Loading required package: grid
+Loading required package: Rcpp
+Loading required package: RCurl
+Loading required package: bitops
+Loading required package: XML
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("calcUpfront")
+> ### * calcUpfront
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: calcUpfront
+> ### Title: Calculate dirty upfront payments from conventional spread
+> ### Aliases: calcUpfront
+> 
+> ### ** Examples
+> 
+> upf <- calcUpfront(baseDate = "2014-01-13", currency = "USD", TDate
++ = "2014-01-14", maturity = "5Y", dccCDS = "ACT/360", freqCDS = "Q",
++ stubCDS = "F", badDayConvCDS = "F", calendar = "None", parSpread =
++ 32, couponRate = 100, recoveryRate = 0.4, isPriceClean = FALSE,
++ notional = 1e7)
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.782 0.02 1.524 0.03 0.009 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
