@@ -2,30 +2,29 @@
 
 library(CDS)
 
-truth1 <- data.frame(TDate = "2014-04-15",
-              maturity = "5Y",
-              contract ="SNAC",
-              parSpread = 12354.53,
-              upfront = 5707438,
-              IRDV01 = -271.18,
-              price = 42.55,
-              principal = 5744938,
-              RecRisk01 = -95430.32,
-              defaultExpo = 255062,
-              spreadDV01 = 21.15,
-              currency = "USD",
-              ptsUpfront = 0.5745,
-              freqCDS = "Q",
-              pencouponDate = "2019-03-20",
-              backstopDate = "2014-02-14",
-              valueDate = "2014-04-15",
-              couponRate = 500,
-              recoveryRate = 0.40,
-              isPriceClean = FALSE,
-              defaultProb = 1.000,
-              notional = 1e7)
+## truth1 <- data.frame(TDate = as.Date("2014-04-15"),
+##              maturity = "5Y",
+##              contract ="SNAC",
+##              parSpread = round(12354.53, digits=2),
+##              upfront = round(5707438, digits=-4),
+##              IRDV01 = round(-271.18, digits=0),
+##              price = 42.55,
+##              principal = round(5744938, digits=-3),
+##              RecRisk01 = round(-95430.32, digits=-3),
+##              defaultExpo = round(255062, digits=-3),
+##              spreadDV01 = round(21.15, digits=0),
+##              currency = "USD",
+##              ptsUpfront = round(0.5745, digits=2),
+##              freqCDS = "Q",
+##              pencouponDate = as.Date("2019-03-20"),
+##              backstopDate = as.Date("2014-02-14"),
+##              couponRate = 500,
+##              recoveryRate = 0.40,
+##              isPriceClean = FALSE,
+##              defaultProb = round(0.99998, digits=2),
+##              notional = 1e7)
 
-save(truth1, file = "CDS.CaesarsEntCorp.test.RData")
+## save(truth1, file = "CDS.CaesarsEntCorp.test.RData")
 
 load("CDS.CaesarsEntCorp.test.RData")
 

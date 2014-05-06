@@ -43,7 +43,7 @@ CDS(contract = "SNAC", entityName = NULL, RED = NULL,
 
   \item{freqCDS}{date interval of the CDS contract}
 
-  \item{maturity}{maturity of the CDS contract}
+  \item{maturity}{of the CDS contract}
 
   \item{payAccruedOnDefault}{is a partial payment of the
   premium made to the protection seller in the event of a
