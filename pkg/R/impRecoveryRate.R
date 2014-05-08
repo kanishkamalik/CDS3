@@ -12,19 +12,20 @@
 #' @param col.pd column number of probability of defaults (pd)
 #' @param time is the period over which the pd is calculated. 
 #' By default, it is 5 yrs
+#' @param col.id is the column for the id of the CDS
 #' 
 #' @return implied recovery rate in percentage based on the general approximation 
 #' for a probability of default in the Bloomberg manual. The actual calculation uses 
 #' a complicated bootstrapping process, so the results may be marginally different.
 #' 
 
-impliedRecoveryRate <- function(data, col.spread, col.pd, time = 5){
+impliedRecoveryRate <- function(data, col.spread, col.pd, col.id, time = 5){
   spread <- data[, col.spread]
   pd <- data[, col.pd]
   impRecoveryRate = NULL
-  ?lappl
   for (i in 1:nrow(data)){
     impRecoveryRate <- c(impRecoveryRate, 100+((spread[i]*time/1e2)*(1/log(1-pd[i]))))
   }
-  return(impRecoveryRate)
+  ID <- levels(data[, col.id])
+  return(cbind("CDS ID" = ID, "IMPLED RECOVERY RATE" = impRecoveryRate))
 }

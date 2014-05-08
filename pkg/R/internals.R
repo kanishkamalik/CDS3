@@ -70,16 +70,18 @@
 }
 
 
-## month diff
+#' month difference
+#' @param d date 
 monnb <- function(d) {
     lt <- as.POSIXlt(as.Date(d, origin="1900-01-01"))
     lt$year*12 + lt$mon
 } 
-## compute a month difference as a difference between two monnb's
+
+#' compute a month difference as a difference between two monnb's
+#' @param d1 date 1
+#' @param d2 date 2
+#' @return month difference as a difference between two monnb's
 mondf <- function(d1, d2) { monnb(d2) - monnb(d1) }
-
-
-
 
 
 cbind.fill<-function(...){

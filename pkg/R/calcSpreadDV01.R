@@ -212,6 +212,14 @@ calcSpreadDV01 <- function(object = NULL,
     
 }
 
+#' The calcIRDV01 method for CDS class. Calculate the spread DV01 from conventional spread
+#' 
+#' @name calcSpreadDV01-method
+#' @aliases calcSpreadDV01,CDS-method
+#' @docType methods
+#' @rdname calcSpreadDV01-methods
+#' @param object the input CDS class object
+#' @export
 
 setMethod("calcSpreadDV01",
           signature(object = "CDS"),

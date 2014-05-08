@@ -7,7 +7,7 @@ length. If we have a data frame like: id,spread,pd which we pass into a
 function, this then returns a vector of implied default rates. Typical
 size for this dataframe is 500 rows.}
 \usage{
-impliedRecoveryRate(data, col.spread, col.pd, time = 5)
+impliedRecoveryRate(data, col.spread, col.pd, col.id, time = 5)
 }
 \arguments{
   \item{data}{dataframe containing the 1. probability of
@@ -21,6 +21,8 @@ impliedRecoveryRate(data, col.spread, col.pd, time = 5)
 
   \item{time}{is the period over which the pd is
   calculated. By default, it is 5 yrs}
+
+  \item{col.id}{is the column for the id of the CDS}
 }
 \value{
 implied recovery rate in percentage based on the general

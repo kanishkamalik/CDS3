@@ -214,6 +214,15 @@ calcRecRisk01 <- function(object = NULL,
     
 }
 
+#' Calculate the amount of change in upfront when there is a 1%
+#' increase in recovery rate.
+#' 
+#' @name calcRecRisk01-method
+#' @aliases calcRecRisk01,CDS-method
+#' @docType methods
+#' @rdname calcRecRisk01-methods
+#' @param object the input CDS class object
+#' @export
 
 setMethod("calcRecRisk01",
           signature(object = "CDS"),
